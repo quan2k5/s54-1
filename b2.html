@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function divideNumber(a, b) {
+        let result;
+        try {
+            if (isNaN(a) || isNaN(b)) {
+                throw new Error('Dữ liệu đầu vào không hợp lệ');
+            }
+            if (b == 0) {
+                throw new Error('Số bị chia là 0');
+            }
+           console.log(a/b);
+        } catch (error) {
+            console.log(`Lỗi: ${error.message}`);
+        } finally {
+            console.log('Kết thúc');
+        }
+    }
+        divideNumber(10, 5) 
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myFirstPromise(){
+             let promise=new Promise((resolve,reject)=>{
+                setTimeout(function(){
+                    resolve('Success');
+                },1000)
+            })
+            promise
+            .then(data=>console.log('Result:',data))
+        }
+        myFirstPromise();
+    </script>
+    
+</body>
+</html>

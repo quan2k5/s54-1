@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countDown(b){
+            let c;
+            let a=new Promise(function(resolve,rejected){
+                c=setInterval(function(){
+                    console.log(b);
+                    b--;
+                    if(b==0){
+                        resolve();
+                    }
+                },1000);
+            })
+            a.then(function(){
+                clearInterval(c);                
+                console.log('ket thuc qua trinh dem');
+            })
+        }
+        countDown(5);
+    </script>
+</body>
+</html>

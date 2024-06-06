@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPrimeWithPromise(n) {
+            return new Promise((resolve, reject) => {
+                if(isNaN(n)){
+                    reject('loi du lieu dau vao')
+                }
+                if (n<2) {
+                    resolve(false);
+                    return;
+                }
+                for (let i = 2; i <= Math.sqrt(n); i++) {
+                    if (n % i === 0) {
+                        resolve(false);
+                        return;
+                    }
+                }     
+                resolve(true);
+        });
+    }
+    isPrimeWithPromise(3)
+        .then(data => console.log(data))
+        .catch(data => console.error("Có lỗi xảy ra: ", data));
+    </script>
+</body>
+</html>

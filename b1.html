@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function calculateBMI(weight, height) {
+        try {
+            if (typeof weight !== 'number' || typeof height !== 'number'||isNaN(weight)||isNaN(height)||weight<=0||height<=0) {
+                throw new Error('du lieu dau vao ko hop le');
+            }
+            let bmi = weight / (height * height);
+            return `chỉ số BMI là: ${bmi.toFixed(2)}`;
+        } catch (error) {
+            return `lỗi: ${error.message}`;
+        }
+    }
+    console.log( calculateBMI(-10,1.75));
+
+
+    </script>
+</body>
+</html>
